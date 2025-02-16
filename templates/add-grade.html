@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Выбор класса</title>
+</head>
+<body>
+    <h1>Выберите или создайте класс</h1>
+    <form method="POST">
+        {{ form.hidden_tag() }}
+        {{ form.name.label }} {{ form.name() }}
+        {{ form.submit() }}
+    </form>
+    <ul>
+        {% for class in classes %}
+            <li><a href="{{ url_for('choose_person', class_id=class[0]) }}">{{ class[1] }}</a></li>
+        {% endfor %}
+    </ul>
+</body>
+</html>

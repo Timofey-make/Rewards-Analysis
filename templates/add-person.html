@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Выбор ученика</title>
+</head>
+<body>
+    <h1>Выберите или создайте ученика</h1>
+    <form method="POST">
+        {{ form.hidden_tag() }}
+        {{ form.name.label }} {{ form.name() }}
+        {{ form.submit() }}
+    </form>
+    <ul>
+        {% for student in students %}
+            <li><a href="{{ url_for('student_page', student_id=student[0]) }}">{{ student[1] }}</a></li>
+        {% endfor %}
+    </ul>
+</body>
+</html>
