@@ -1,0 +1,161 @@
+/* Общие стили */
+body {
+    font-family: Arial, sans-serif;
+    line-height: 1.6;
+    margin: 0;
+    padding: 0;
+    background-color: #E0F7FA; /* Светло-голубой фон */
+    color: #00695C; /* Темно-голубой текст */
+}
+
+header {
+    background-color: #80DEEA; /* Голубой */
+    padding: 20px;
+    text-align: center;
+}
+
+header h1 {
+    margin: 0;
+    color: #00695C; /* Темно-голубой */
+}
+
+main {
+    padding: 20px;
+}
+
+section {
+    margin-bottom: 30px;
+}
+
+h2 {
+    color: #00695C; /* Темно-голубой */
+}
+
+/* Стили для формы */
+.form-group {
+    margin-bottom: 15px;
+}
+
+.form-input {
+    width: 100%;
+    padding: 10px;
+    margin-top: 5px;
+    border: 1px solid #80DEEA; /* Голубой */
+    border-radius: 5px;
+    font-size: 16px;
+}
+
+.form-submit {
+    background-color: #00ACC1; /* Темно-голубой */
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px;
+}
+
+.form-submit:hover {
+    background-color: #0097A7; /* Темнее голубой */
+}
+
+/* Стили для списка классов */
+.class-list ul {
+    list-style: none;
+    padding: 0;
+}
+
+.class-list li {
+    margin-bottom: 10px;
+}
+
+.class-link {
+    text-decoration: none;
+    color: #00ACC1; /* Темно-голубой */
+    font-size: 18px;
+}
+
+.class-link:hover {
+    text-decoration: underline;
+}
+
+/* Футер */
+footer {
+    background-color: #80DEEA; /* Голубой */
+    text-align: center;
+    padding: 10px;
+    position: fixed;
+    width: 100%;
+    bottom: 0;
+    height: 40px; /* Уменьшаем высоту футера */
+}
+
+/* Стили для картинок */
+img {
+    width: 300px; /* Ширина картинки */
+    height: 400px; /* Высота картинки */
+    object-fit: cover; /* Сохраняет пропорции и обрезает изображение */
+    border-radius: 10px; /* Закругленные углы */
+}
+
+/* Адаптивность */
+@media (max-width: 768px) {
+    header h1 {
+        font-size: 24px;
+    }
+
+    .form-input, .form-submit {
+        width: 100%;
+    }
+
+    .class-link {
+        font-size: 16px;
+    }
+
+    /* Адаптивность для картинок */
+    img {
+        width: 100%; /* На мобильных устройствах картинки занимают всю ширину */
+        height: auto; /* Высота автоматически подстраивается */
+    }
+}
+
+/* Общие стили для privacy-content */
+.privacy-content {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 20px;
+    background-color: white;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.lyrics p {
+    margin: 10px 0;
+    font-size: 16px;
+    line-height: 1.5;
+}
+
+.back-button {
+    background-color: #00ACC1; /* Темно-голубой */
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px;
+}
+
+.back-button:hover {
+    background-color: #0097A7; /* Темнее голубой */
+}
+
+/* Адаптивность для privacy-content */
+@media (max-width: 768px) {
+    .privacy-content {
+        padding: 15px;
+    }
+
+    .lyrics p {
+        font-size: 14px;
+    }
+}

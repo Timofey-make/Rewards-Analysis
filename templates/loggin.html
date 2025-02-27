@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Вход</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}"> <!-- Подключаем общий файл стилей -->
+</head>
+<body>
+    <header>
+        <h1>Вход в систему</h1>
+    </header>
+
+    <main>
+        <section class="login-form">
+            <h2>Вход</h2>
+            <form method="POST">
+                {{ form.hidden_tag() }}
+                <div class="form-group">
+                    {{ form.username.label }}
+                    {{ form.username(class="form-input") }}
+                </div>
+                <div class="form-group">
+                    {{ form.password.label }}
+                    {{ form.password(class="form-input") }}
+                </div>
+                <div class="form-group">
+                    {{ form.submit(class="form-submit") }}
+                </div>
+            </form>
+            <p class="register-link">Нет аккаунта? <a href="{{ url_for('register') }}">Зарегистрироваться</a></p>
+        </section>
+
+        <section class="privacy-policy">
+            <h3>Политика конфиденциальности</h3>
+            <p>Когда вы входите в систему нашего сайта, вы соглашаетесь с <a href="{{ url_for('privacy_policy') }}">политикой конфиденциальности</a>.</p>
+        </section>
+    </main>
+
+    <footer>
+        <p>&copy; 2025 Портфолио школы. Все права защищены.</p>
+    </footer>
+</body>
+</html>

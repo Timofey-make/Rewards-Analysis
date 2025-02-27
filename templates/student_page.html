@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{{ student[1] }}</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
+</head>
+<body>
+    <header>
+        <h1>{{ student[1] }}</h1>
+    </header>
+
+    <main>
+        {% if is_owner %}
+            <section class="add-achievement">
+                <h3>Добавить достижение</h3>
+                <form method="POST" enctype="multipart/form-data">
+                    {{ form.hidden_tag() }}
+                    <div class="form-group">
+                        {{ form.description.label }}
+                        {{ form.description(class="form-input") }}
+                    </div>
+                    <div class="form-group">
+                        {{ form.file.label }}
+                        {{ form.file(class="form-input") }}
+                    </div>
+                    <div class="form-group">
+                        {{ form.submit(class="form-submit") }}
+                    </div>
+                </form>
+            </section>
+        {% else %}
+            <p class="warning">Вы не можете редактировать эту страницу.</p>
+        {% endif %}
+
+        <section class="achievements">
+            <h3>Достижения:</h3>
+            <ul>
+                {% for achievement in achievements %}
+                    <li class="achievement-item">
+                        <img src="{{ url_for('uploaded_file', filename=achievement[0]) }}" alt="Achievement" class="achievement-image">
+                        <p class="achievement-description">{{ achievement[1] }}</p>
+                        {% if is_owner %}
+                            <form method="POST" action="{{ url_for('delete_achievement', student_id=student[0], filename=achievement[0]) }}" class="delete-form">
+                                <button type="submit" class="delete-button">Удалить</button>
+                            </form>
+                        {% endif %}
+                    </li>
+                {% endfor %}
+            </ul>
+        </section>
+    </main>
+
+    <footer>
+        <p>&copy; 2025 Портфолио школы. Все права защищены.</p>
+    </footer>
+</body>
+</html>
